@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DncWeather</title>
+</head>
+<body>
+    <nav id="menu">
+        <h1>DncWeather</h1>
+        <ul>
+            <li><a href="#">Endereços</a></li>
+            <li><a href="#">Previsão do tempo</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="descricao">
+            <h1>Descubra Mais com Precisão: <br>
+                Previsões do Tempo e endereços <br> em tempo real.</h1>
+            <img src="img/nuvens-sol.svg" alt="nuvens e sol">
+    
+        </div>
+
+        <form action="">
+            <label for="name">Primeiro Nome:</label><br>
+            <input class="input" type="text" name="name" id="name" placeholder="Insira seu primeiro nome:" required><br>
+
+            <label for="email">E-mail:</label><br>
+            <input class="input" type="text" name="email" id="email" placeholder="Insira seu e-mail" required><br>
+
+            <label for="cep">Digite seu CEP:</label><br>
+            <input class="input" type="text" name="cep" id="cep" placeholder="Insira o CEP" required><br>
+
+            <label for="localizacao">Digite a latitude e longitude para saber a previsão:</label><br>
+            <div>
+                <input class="input" type="number" name="localizacao" id="latitude" placeholder="Latitude" required>
+                <input class="input" type="number" name="localizacao" id="longitude" placeholder="Longitude" required>
+            </div>
+            
+            <input id="button" type="button" value="Acessar" onclick="fetchDados()">
+        </form>
+
+        <div id="tabela">
+            <div>
+                <h1>Resultado da busca por CEP</h1>
+                <img src="img/localizacao.svg" alt="seta de localização">
+    
+            </div>
+
+            <table>
+                <tr id="topico">
+                    <th>Logradouro/nome</th>
+                    <th>Bairro/Distrito</th>
+                    <th>Localidade/UF</th>
+                </tr>
+
+                <tr id="descricaoTabela">
+                    <td>
+                        <input type="text" id="localidade" readonly>
+                    </td>
+                    <td>
+                        <input type="text" id="bairro" readonly>
+                    </td>
+                    <td>
+                        <input type="text" id="uf" readonly>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="previsaoDoTempo">
+            <div>
+                <h1>Previsão do tempo na região:</h1>
+                <img src="img/nuvens.svg" alt="nuvens">
+            </div>
+            <div id="paragrafo">
+                <p>Previsão de tempo de acordo com a região: <input type="text" id="temperatura" readonly></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Termos de Uso | Política de Privacidade</p>
+    </footer>
+
+    <script src="js/previsaoDoTempo.js"></script>
+</body>
+</html>
